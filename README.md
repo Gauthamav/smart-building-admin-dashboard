@@ -71,23 +71,3 @@ export default defineConfig([
   },
 ])
 ```
-
-
-
-
-  {!isHideSearchBar && (
-        <input
-          placeholder="Search...."
-          className="max-w-[400px] w-full text-[#006bd6] top-26 z-20 absolute md:hidden placeholder:text-black cursor-pointer pl-4 shadow-lg px-5 py-2 rounded-lg outline-none border-[1px] border-[#006bd6] placeholder:text-sm"></input>
-      )}
-
-      
-
-
-
-       <div className="p-2 border-[1px] md:hidden shadow-lg relative group border-[#006bd6] rounded-md  ">
-          <Search size={20} onClick={handleClick} className="text-[#006bd6] cursor-pointer" />
-          <span className="absolute top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-100 px-3 py-1 text-xs text-[#006bd6] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-            Settings
-          </span>
-        </div>
