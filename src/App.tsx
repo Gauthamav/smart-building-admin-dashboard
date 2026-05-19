@@ -1,13 +1,18 @@
-
+import Dashboard from './pages/Dashboard';
+import { Routes, Route } from 'react-router-dom';
+import Organization from './pages/Organization';
+import Navbar from './components/Navbar';
 
 function App() {
-
-
   return (
-    <>
-    hello
-    </>
-  )
+    <main>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Dashboard />}></Route>
+        <Route path="/organization" element={<Organization />}></Route>
+      </Routes>
+    </main>
+  );
 }
 
-export default App
+export default App;

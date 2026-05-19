@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+.wrapper {
+  max-width: 1840px;
+  width: 97%;
+  margin-left: auto;
+  margin-right: auto;
+}
