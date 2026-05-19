@@ -1,0 +1,16 @@
+[
+  { "id": 1, "name": "campuses", "value": 1, "icon": "/building.svg" },
+  { "id": 2, "name": "buildings", "value": 2, "icon": "/school.svg" },
+  { "id": 3, "name": "floors", "value": 2, "icon": "/layers.svg" },
+  { "id": 4, "name": "rooms", "value": 9, "icon": "/door-open.svg" },
+  { "id": 5, "name": "users", "value": 5, "icon": "/users.svg" },
+  { "id": 6, "name": "assets", "value": 279, "icon": "/box.svg" },
+  { "id": 7, "name": "workOrders", "value": 1164, "icon": "/notebook-pen.svg" },
+  { "id": 8, "name": "workRequests", "value": 13, "icon": "/briefcase-business.svg" },
+  { "id": 9, "name": "alarms", "value": 25, "icon": "/bell.svg" },
+  { "id": 10, "name": "gateways", "value": 5, "icon": "/door-closed.svg" },
+  { "id": 11, "name": "wiredDevices", "value": 11, "icon": "/cable.svg" },
+  { "id": 12, "name": "wirelessDevices", "value": 22, "icon": "/wifi.svg" },
+  { "id": 13, "name": "healthScore", "value": 63.64, "icon": "/heart-pulse.svg" },
+  { "id": 14, "name": "areaSqFt", "value": 105000, "icon": "/land-plot.svg" }
+]

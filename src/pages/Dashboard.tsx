@@ -17,7 +17,7 @@ const Dashboard = () => {
               <h2 className="font-bold">Dashboard</h2>
               <p>Welcome back, John 👋</p>
             </div>
-            <Calendar></Calendar>
+            <Calendar />
           </div>
 
           <div className="flex mt-4 gap-4">
