@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../assets/logo.png';
 import { sidebarItems } from '../data/SidebarData';
 import { useLocation } from 'react-router-dom';

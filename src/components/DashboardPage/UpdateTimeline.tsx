@@ -1,4 +1,4 @@
-import React from 'react';
+
 import useFormatDate from '../../hooks/useFormatDate';
 
 type TimelineProps = {

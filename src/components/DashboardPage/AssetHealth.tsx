@@ -1,4 +1,4 @@
-import React from 'react';
+
 import WidgetHeading from '../WidgetHeading';
 import BuildingHealthAccordion from './BuildingHealthAccordion';
 import Error from '../Error';

@@ -1,4 +1,4 @@
-import React from 'react';
+
 import WidgetHeading from '../WidgetHeading';
 import UpdateTimeline from './UpdateTimeline';
 import { useFetchData } from '../../hooks/useFetchData';
