@@ -1,7 +1,6 @@
 import Dashboard from './pages/Dashboard';
 import { Routes, Route } from 'react-router-dom';
 import Organization from './pages/Organization';
-import Navbar from './components/Navbar';
 
 function App() {
   return (

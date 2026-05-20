@@ -5,6 +5,8 @@ import Calendar from '../components/DashboardPage/Calender';
 import OrganizationOverview from '../components/DashboardPage/OrganizationOverview';
 import ProductUpdate from '../components/DashboardPage/ProductUpdate';
 import AssetHealth from '../components/DashboardPage/AssetHealth';
+import DeviceHealthAnalytics from '../components/DashboardPage/DeviceHealthAnalytics';
+import BuildingMap from '../components/DashboardPage/BuildingMap';
 
 const Dashboard = () => {
   return (
@@ -13,7 +15,7 @@ const Dashboard = () => {
       <div className=" h-full  w-full ">
         <Navbar />
         <div className="bg-white wrapper">
-          <div className="flex items-center justify-between">
+          <div className="flex sm:items-center sm:flex-row flex-col gap-4 justify-between">
             <div className="text-[#006bd6]">
               <h2 className="font-bold">Dashboard</h2>
               <p>Welcome back, John 👋</p>
@@ -21,12 +23,14 @@ const Dashboard = () => {
             <Calendar />
           </div>
 
-          <div className="flex mt-4 md:flex-row flex-col gap-4">
+          <div className="flex my-4 md:flex-row flex-col gap-4">
             <OrganizationOverview />
             <ProductUpdate />
           </div>
-          <div className="flex mt-4 gap-3">
+          <DeviceHealthAnalytics />
+          <div className="flex md:flex-row flex-col my-4 gap-3">
             <AssetHealth />
+            <BuildingMap />
           </div>
         </div>
       </div>

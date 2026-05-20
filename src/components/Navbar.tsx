@@ -5,27 +5,32 @@ import { Menu } from 'lucide-react';
 import { Settings } from 'lucide-react';
 import { Bell } from 'lucide-react';
 import adminImage from '../assets/admin.jpg';
+import { useDispatch } from 'react-redux';
+import { toggleSidebar } from '../redux/sidebarSlice';
 
 const Navbar = () => {
   const [isSearchBarVisible, setIsSearchBarVisible] = useState(true);
   const handleClick = () => {
     setIsSearchBarVisible(prev => !prev);
   };
+  const dispatch = useDispatch();
   return (
     <div className="shadow-lg flex items-center  mb-3 h-20 w-full bg-white">
-      <div className='flex items-center justify-between wrapper '>
+      <div className="flex items-center justify-between wrapper ">
         {!isSearchBarVisible && (
           <input
             placeholder="Search...."
             className="max-w-[400px] w-full bg-white text-[#006bd6] top-20 z-20 absolute md:hidden placeholder:text-black cursor-pointer pl-4 shadow-lg px-5 py-3 rounded-lg outline-none border-[1px] border-[#006bd6] placeholder:text-sm"></input>
         )}
         <div className="flex items-center gap-2">
-          <div className="lg:hidden group cursor-pointer relative flex items-center justify-center  p-2 rounded-md shadow-lg">
+          <button
+            onClick={() => dispatch(toggleSidebar())}
+            className="lg:hidden group cursor-pointer relative flex items-center justify-center  p-2 rounded-md shadow-lg">
             <Menu className=" text-[#006bd6] cursor-pointer" />
             <span className="absolute top-10 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-gray-100 px-3 py-1 text-xs text-[#006bd6] opacity-0 transition-opacity duration-200 group-hover:opacity-100">
               Menu
             </span>
-          </div>
+          </button>
           <img alt="company-logo" className="max-w-[100px] lg:hidden cursor-pointer h-18" src={logo}></img>
         </div>
 

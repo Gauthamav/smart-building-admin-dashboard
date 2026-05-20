@@ -1,41 +1,50 @@
 import React from 'react';
 import WidgetHeading from '../WidgetHeading';
 import BuildingHealthAccordion from './BuildingHealthAccordion';
+import Error from '../Error';
+import { useFetchData } from '../../hooks/useFetchData';
+import SkeltonAssetHealth from '../SkeltonAssetHealth';
+type Floor = {
+  id: number;
+  name: string;
+  assets: {
+    healthy: number;
+    warning: number;
+    critical: number;
+  };
+  energy: {
+    consumption: number;
+    unit: string;
+  };
+};
+
+type AssetHealthProps = {
+  id: number;
+  building: string;
+  floors: Floor[];
+};
 
 const AssetHealth = () => {
-  const data = [
-    {
-      building: 'Garuda Bhive',
-      floors: [
-        {
-          name: 'Floor 1',
-          assets: { healthy: 120, warning: 18, critical: 4 },
-          energy: { consumption: 240, unit: 'kWh' },
-        },
-        {
-          name: 'Floor 2',
-          assets: { healthy: 98, warning: 11, critical: 2 },
-          energy: { consumption: 190, unit: 'kWh' },
-        },
-      ],
-    },
-    {
-      building: 'Marathon Futurex',
-      floors: [
-        {
-          name: 'Ground Floor',
-          assets: { healthy: 85, warning: 9, critical: 1 },
-          energy: { consumption: 130, unit: 'kWh' },
-        },
-      ],
-    },
-  ];
+  const { data, loading, error, handleRefetch } = useFetchData<AssetHealthProps[]>('/data/assetHealth.json');
+
+  if (loading || data === null) {
+    return <SkeltonAssetHealth />;
+  }
+
+  if (error) {
+    return <Error error={error} refetch={handleRefetch} />;
+  }
+
+  if (data?.length === 0) {
+    return <Error error={'Something went wrong'} refetch={handleRefetch} />;
+  }
+
   return (
-    <div className=" max-w-full bg-white w-[50%]   border-[1px] border-gray-300 rounded-md p-2">
+    <div className="  bg-white w-full   border-[1px] border-gray-300 rounded-md p-2">
       <WidgetHeading heading="Asset Health" />
       <div className="flex flex-col mt-3 w-full gap-3">
-        {data.map(item => (
-          <BuildingHealthAccordion name={item.building} floor={item.floors}></BuildingHealthAccordion>
+        {data?.map(item => (
+          <BuildingHealthAccordion key={item.id} name={item.building} floor={item.floors}></BuildingHealthAccordion>
         ))}
       </div>
     </div>

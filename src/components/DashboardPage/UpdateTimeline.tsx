@@ -11,13 +11,11 @@ type TimelineProps = {
 
 const UpdateTimeline = ({ title, version, date, length, index }: TimelineProps) => {
   const { parseDate } = useFormatDate();
-
-  console.log(parseDate);
   return (
     <div className="flex max-w-full   gap-5">
       <div className="flex flex-col items-center">
         <div className="w-4 max-h-4 rounded-full max-w-full h-full bg-white border-2 border-[#006bd6]"></div>
-        {index < length-1 && <div className="w-[2.5px] h-full bg-gray-500"></div>}
+        {index < length - 1 && <div className="w-[2.5px] h-full bg-gray-500"></div>}
       </div>
       <div className="flex flex-col  gap-1">
         <div className="flex  sm:flex-row flex-col  gap-2">

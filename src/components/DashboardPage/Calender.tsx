@@ -19,7 +19,7 @@ const Calendar = () => {
       <div className="absolute top-[6px] pl-1">
         <CalendarDays className="text-[#006bd6]" size={20} />
       </div>
-      <div className="absolute top-[8px] cursor-pointer  pr-2 right-0">
+      <div className="absolute top-[8px] cursor-pointer left-33 pr-2 sm:right-0">
         <ChevronDown className="text-[#006bd6]" size={20} />
       </div>
     </div>

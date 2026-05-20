@@ -1,7 +1,9 @@
 import React from 'react';
 import WidgetHeading from '../WidgetHeading';
 import UpdateTimeline from './UpdateTimeline';
-import { useState, useEffect } from 'react';
+import { useFetchData } from '../../hooks/useFetchData';
+import SkeltonProduct from '../SkeltonProduct';
+import Error from '../Error';
 
 type TimelineItems = {
   id: number;
@@ -13,28 +15,31 @@ type TimelineItems = {
 };
 
 const ProductUpdate = () => {
-  const [items, setItems] = useState<TimelineItems[]>([]);
+  const { data, loading, error, handleRefetch } = useFetchData<TimelineItems[]>('/data/productUpdate.json');
 
-  const fetchData = async () => {
-    const result = await fetch('/data/productUpdate.json');
-    const data = await result.json();
-    setItems(data);
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  if (loading || data === null) {
+    return <SkeltonProduct />;
+  }
+
+  if (error) {
+    return <Error error={error} refetch={handleRefetch} />;
+  }
+
+  if (data?.length === 0) {
+    return <Error error={'Something went wrong'} refetch={handleRefetch} />;
+  }
 
   return (
     <div className=" md:w-[70%] w-full max-w-full bg-white  border-[1px] border-gray-300 rounded-md p-2">
-      <WidgetHeading heading="Project Update" />
+      <WidgetHeading heading="Product Update" />
       <div className="mt-5">
-        {items.map((item, index) => (
+        {data?.map((item, index) => (
           <UpdateTimeline
             key={item.id}
             title={item.title}
             version={item.version}
             date={item.releaseDate}
-            length={items.length}
+            length={data.length}
             index={index}
           />
         ))}
