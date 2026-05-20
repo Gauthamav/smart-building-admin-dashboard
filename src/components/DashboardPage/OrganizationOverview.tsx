@@ -23,7 +23,7 @@ const OrganizationOverview = () => {
   return (
     <div className=" w-full bg-white  border-[1px] border-gray-300 rounded-md p-2">
       <WidgetHeading heading="Organization Overview" />
-      <div className="grid xl:grid-cols-3 sm:grid-cols-2  items-center pt-5  gap-5">
+      <div className="grid xl:grid-cols-3 grid-cols-2  items-center pt-5  gap-5">
         {items.length !== 0 ? (
           items.map(item => (
             <OverviewCard key={item.id} name={item?.name} value={item?.value} icon={item?.icon}></OverviewCard>

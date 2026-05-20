@@ -5,9 +5,9 @@ import { sidebarItems } from '../data/SidebarData';
 import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
-    const location = useLocation()
+  const location = useLocation();
   return (
-    <div className="w-full max-w-[220px]  mx-auto px-2 pt-[2px] hidden lg:block  h-screen bg-[#F1F5F9]">
+    <div className="w-full max-w-[220px]  mx-auto px-2 pt-[2px] hidden lg:block  min-h-screen bg-[#F1F5F9]">
       <div className="flex text-[#006bd6] items-center gap-2">
         <img alt="company-logo" className="max-w-[100px]  cursor-pointer h-18" src={logo}></img>
         <div>

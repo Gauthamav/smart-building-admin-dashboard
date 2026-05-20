@@ -4,6 +4,7 @@ import Sidebar from '../components/Sidebar';
 import Calendar from '../components/DashboardPage/Calender';
 import OrganizationOverview from '../components/DashboardPage/OrganizationOverview';
 import ProductUpdate from '../components/DashboardPage/ProductUpdate';
+import AssetHealth from '../components/DashboardPage/AssetHealth';
 
 const Dashboard = () => {
   return (
@@ -20,9 +21,12 @@ const Dashboard = () => {
             <Calendar />
           </div>
 
-          <div className="flex mt-4 gap-4">
+          <div className="flex mt-4 md:flex-row flex-col gap-4">
             <OrganizationOverview />
             <ProductUpdate />
+          </div>
+          <div className="flex mt-4 gap-3">
+            <AssetHealth />
           </div>
         </div>
       </div>
