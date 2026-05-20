@@ -12,7 +12,7 @@ export function useFetchData<T>(url: string) {
     setError(null);
     setTimeout(() => {
       fetchData();
-    }, 1000);
+    }, 200);
   };
   const fetchData = async () => {
     setLoading(true);
@@ -33,7 +33,7 @@ export function useFetchData<T>(url: string) {
   useEffect(() => {
     const timer = setTimeout(() => {
       fetchData();
-    }, 1000);
+    }, 200);
     return () => clearTimeout(timer);
   }, [url]);
   return { data, loading, error, handleRefetch };
