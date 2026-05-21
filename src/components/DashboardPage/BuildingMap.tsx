@@ -47,8 +47,8 @@ const BuildingMap = () => {
 
   const positions: [number, number][] = data?.map(item => item.geoLocation);
   const customIcon = new L.Icon({
-    iconUrl: '/marker.png',
-    iconSize: [25, 41],
+    iconUrl: '/marker.svg',
+    iconSize: [35, 35],
     iconAnchor: [12, 41],
   });
   return (
