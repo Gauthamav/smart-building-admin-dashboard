@@ -1,4 +1,3 @@
-
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { useEffect } from 'react';
 import { useMap } from 'react-leaflet';
@@ -47,6 +46,11 @@ const BuildingMap = () => {
   }
 
   const positions: [number, number][] = data?.map(item => item.geoLocation);
+  const customIcon = new L.Icon({
+    iconUrl: '/marker.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+  });
   return (
     <div className=" md:max-w-[400px] w-full  bg-white  border-[1px] border-gray-300 rounded-md p-2">
       <WidgetHeading heading="Building Map" />
@@ -58,7 +62,7 @@ const BuildingMap = () => {
           />
           <FindBounds positions={positions} />
           {data?.map(item => (
-            <Marker key={item.id} position={item.geoLocation}>
+            <Marker key={item.id} icon={customIcon} position={item.geoLocation}>
               <Popup className="rounded-md">
                 <b>{item.name}</b> <br />
                 City: {item.city} <br />
