@@ -103,5 +103,5 @@ export default defineConfig([
 
 ## Setup Instruction 
 git clone https://github.com/Gauthamav/smart-building-admin-dashboard.git
-npm install
-npm run dev
+- npm install
+- npm run dev
